@@ -1,0 +1,180 @@
+ <div id="carDetailsCollapsiblePanel"> 
+                       <div class="row">
+                             <div class="col-xs-12" style="margin-bottm:10px;"><hr></div>
+                       </div> 
+     
+                       <div class="row">
+ 
+                            <div class="col-xs-6">
+                                <label for="toDate">תאריך תחילת ביטוח:</label>
+                            </div>
+                            <div class="col-xs-6"><label>קוד דגם:</label></div>
+                        </div>
+                        <div class="row">
+                             <div class="col-xs-12 col-md-6">  
+                                  <input type="text"  data-fw-datepicker 
+                                         data-ng-model='vmCar.carServices.startDate'
+                                         placeholder="dd/mm/yyyy" 
+                                         class='inputDateStyle mandatory ui-corner-all'
+                                         required> 
+                             </div>                           
+                             <div class="col-xs-12 col-md-6">
+                                  <button id="clean" 
+                                          class="btn btn-primary" 
+                                          style="position:relative; top:-1px;"
+                                          data-ng-click = 'vmCar.carServices.reset();'>
+                                      נקה
+                                  </button>
+                                  <input type="text" 
+                                         data-ng-model="vmCar.carServices.selectedModelCode"
+                                         data-ng-class = '{disabled : vmCar.viewState.modelCodeIsDisabled}'
+                                         data-ng-disabled = 'vmCar.viewState.modelCodeIsDisabled'
+                                         id="carModelId"  class="ui-corner-all">
+                                  <button id="search" class="btn btn-primary" 
+                                          style="position:relative; top:-1px;"
+                                          data-ng-disabled = 'vmCar.viewState.modelCodeIsDisabled'>
+                                    <span class="glyphicon glyphicon-search"></span>
+                                  </button>                               
+                             </div>    
+                       </div>
+     
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div>
+                      
+                       <div class="row">
+                            
+                            <div class="col-xs-6"><label>סוג הרכב:</label></div>
+                            <div class="col-xs-6"><label>יצרן:</label></div>
+                       </div>
+                        
+                       <div class="row">
+ 
+                           <div class="col-xs-6">
+
+                                <select class="ui-corner-all" name="carType" 
+                                        data-ng-class = '{disabled : vmCar.viewState.carTypeIsDisabled}'
+                                        data-ng-model="vmCar.carServices.selectedCarType"
+                                        data-ng-disabled='vmCar.viewState.carTypeIsDisabled'>
+                                  <option value="">בחר</option>
+                                  <option ng-repeat="type in vmCar.carServices.carTypes"  
+                                          value="{{type.id}}">{{type.name}}</option>
+                                </select> 
+
+                           </div>
+                           <div class="col-xs-6" >
+                               <select data-ng-model="vmCar.carServices.selectedCarManufacturer" 
+                                       data-ng-class = '{disabled : vmCar.viewState.carManufacturerIsDisabled}'
+                                       class="ui-corner-all" name="carManufacturer"
+                                       data-ng-disabled='vmCar.viewState.carManufacturerIsDisabled'>
+                                  <option value="">בחר</option>
+                                  <option data-ng-repeat='manufacturer in vmCar.carServices.carManufacturers'
+                                          value='{{manufacturer.id}}'>{{manufacturer.name}}</option>
+                                  
+                                </select>
+                           </div>
+                       </div>
+                        
+                        <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div> 
+                        
+                       <div class="row">
+                            <div class="col-xs-6"><label>שנת יצור:</label></div>
+                            <div class="col-xs-6"><label>דגם:</label></div>
+                           
+                       </div>
+                        
+                       <div class="row">
+                           <div class="col-xs-6">
+                              <select class="ui-corner-all" 
+                                      data-ng-class = '{disabled : vmCar.viewState.carManufacturingYearsIsDisable}'
+                                      data-ng-model="vmCar.carServices.selectedCarManufacturingYear"
+                                      data-ng-disabled='vmCar.viewState.carManufacturingYearsIsDisable'>
+                                  <option value="">בחר</option>
+                                  
+                                  <option
+                                          data-ng-repeat='year in vmCar.carServices.carManufacturingYears' 
+                                          value='{{year.carManufacturingYear}}'>{{year.carManufacturingYear}}</option>
+                                 
+                              </select>                             
+                           </div>
+                           <div class="col-xs-6">
+ 
+                                <select class="ui-corner-all" 
+                                        data-ng-model="vmCar.carServices.selectedModel"
+                                        data-ng-disabled='vmCar.viewState.modelsLsIsDisabled'
+                                        data-ng-class = '{disabled : vmCar.viewState.modelsLsIsDisabled}'>
+                                    <option value="">בחר</option>
+                                    
+                                    <option data-ng-repeat='model in vmCar.carServices.modelsLs' 
+                                            value="{{model.model}}">
+                                        {{model.name}}
+                                    </option>
+                                </select>  
+                           </div>
+                       </div>
+                        
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div> 
+                        
+                       <div class="row">
+                            
+                            <div class="col-xs-6"><label>גיר:</label></div>
+                            <div class="col-xs-6"><label>בעלות:</label></div>
+                       </div>
+                        
+                       <div class="row">
+                           
+
+                           <div class="col-xs-6">
+                               <select class="ui-corner-all" 
+                                       data-ng-model="vmCar.carServices.gir" >
+                                  <option value="">בחר</option>
+                                  <option value="0"> ידני</option>
+                                  <option value="1">אוטומתי</option>
+                                 
+                                </select> 
+
+                           </div>
+                            <div class="col-xs-6">
+                               <select data-ng-model="vmCar.carServices.carOwnership" 
+                                       class="ui-corner-all"  
+                                       name="carOwnership" >
+                                  <option value="">בחר</option>
+                                  <option value="0">רכב פרטי</option>
+                                  <option value="1">רכב חברה</option>
+                               </select> 
+                           </div>                          
+                           
+                       </div>                      
+                            
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"><hr></div>
+                       </div> 
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div> 
+                        
+                       <div class="row">
+                           <div class="col-xs-3"
+                                data-ng-show='vmCar.viewState.engineVolumeIsEnabled'>
+                              <label>נפח מנוע:</label>
+                           </div>
+                           <div class="col-xs-3"
+                                data-ng-show='vmCar.viewState.engineVolumeIsEnabled'>
+                                {{vmCar.carServices.allData[0].engineVolumeFlag}}
+                           </div>
+                           <div class="col-xs-3"
+                                data-ng-show='vmCar.viewState.weigthFlagIsEnabled'>
+                                <label>משקל:</label>
+                           </div>
+                           <div class="col-xs-3"
+                                data-ng-show='vmCar.viewState.weigthFlagIsEnabled'>
+                               {{vmCar.carServices.allData[0].weigthFlag}}
+                           </div>                          
+                       </div>
+                        
+                        
+</div> 

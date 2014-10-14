@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+
+    <link href="app/app.less" type="text/css" rel="stylesheet/less">
+
+    <!-- BOOTSTRAP CSS ========================================-->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="bower_components/bootstrap-rtl/dist/css/bootstrap-rtl.css" type="text/css" rel="stylesheet">
+
+    <!-- 3rd Parth CSS ========================================-->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css"/>
+
+    <!-- JQUERY-UI CSS ========================================-->
+    <link rel="stylesheet" href="components/jquery-ui-1.11.0.custom/jquery-ui.css"/>   
+    
+    <!--
+      <style>
+        div{
+            border: 1px solid red;
+        }
+        div.stateDiv{
+            border: 1px solid blue;
+        }
+      </style>
+    -->
+</head>
+<body ng-app="app">
+
+<div id="content" class="container-fluid">
+
+    <div ui-view>
+    </div>
+
+</div>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="bower_components/html5shiv/html5shiv.js"></script>
+<script src="bower_components/respond/respond.min.js"></script>
+
+<![endif]-->
+
+<!-- Livereload script for development only (stripped during dist build) -->
+<script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+<!-- JS from Bower Components -->
+<script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
+<script src="bower_components/jquery-legacy/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui-legacy/jquery-ui.min.js"></script>
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
+<script src="bower_components/date-utils/lib/date-utils.min.js"></script>
+<!-- Add New Bower Component JS Above -->
+
+
+<!-- Main App JS -->
+<script src="app/app.js"></script>
+<script src="app/app.controller.js"></script>
+
+<!-- directives -->
+<script src="directive/datepicker-directive/datepicker-directive.js"></script>
+<script src="directive/fwZippy-directive/fwZippy-directive.js"></script>
+<script src="directive/fwToggle-directive/fwToggle-directive.js"></script>
+
+<!-- coreModule -->
+<script src="core-module/core-module.js"></script>
+<script src="core-module/core.constants.js"></script>
+<script src="core-module/core.config.js"></script>
+<script src='core-module/data.service.js'></script>
+    
+<!-- navModule -->
+<script src="nav-module/nav-module.js"></script>
+<script src="nav-module/nav.controller.js"></script>
+
+<!-- carModule -->
+<script src="car-module/car-module.js"></script>
+<script src="car-module/car.config.js"></script>
+<script src="car-module/car.controller.js"></script>
+<script src="car-module/service/car-service.js"></script>
+
+<!-- flatModule -->
+<script src="flat-module/flat-module.js"></script>
+<script src="flat-module/flat-module.config.js"></script>
+<script src="flat-module/flat.controller.js"></script>
+<script src="flat-module/service/flat-service.js"></script>
+
+<!-- Add New Component JS Above -->
+
+
+<script>
+    $(document).ready(function () {
+        Date.prototype.toString = function () {
+            return (this.toFormat("DD/MM/YYYY"));
+        }
+        
+        Date.prototype.as400format = function() {
+             return (this.toFormat("YYYYMMDD"));
+        } 
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+@import "../bower_components/bootstrap/less/bootstrap";
+//@import "bower_components/bootstrap/less/theme.less";
+@import "../bower_components/font-awesome/less/font-awesome";
+@fa-font-path: "bower_components/font-awesome/fonts";
+
+/* Component LESS */
+@import "../directive/datepicker-directive/datepicker-directive";
+/* Add Component LESS Above */
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel a { cursor: pointer; }
+
+/* Personal preference for BS modal.  The LESS below makes the backdrop white and
+   causes the modal to fade in rather than slide in. */
+//@modal-backdrop-bg: white;
+//.modal {
+//	&.fade {
+//		.transition(opacity .3s);
+//	}
+//	&.fade .modal-dialog {
+//		.translate(0,0);
+//	}
+//}
+
+
+.mainPanel { padding: 0.4em; position: relative; }    
+.mainPanel h3 { margin: 0; padding: 0.4em; text-align: center; }   
+      
+.sidebarPanel { padding: 0.4em; position: relative; }    
+.sidebarPanel h3 { margin: 0; padding: 0.4em; text-align: center; }
+
+//.ng-scope{
+//    direction: rtl;
+//}
+
+.right-panel,
+.proposal-panel{
+    
+    padding: 1px !important;
+    
+}
+
+#carModelId{
+    height: 34px;
+   
+}
+
+select{
+    width: 247px;
+    height: 34px;
+    font-family: arial;
+    font-size: 16px;
+    text-align: center;
+}
+
+label{
+    font-family: arial;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.zippyHeader{
+    
+   font-family: arial;
+   font-size: 16px;
+   white-space: nowrap;
+    
+   padding-bottom: 6px;
+   padding-top: 6px;
+   height: 35px;
+   cursor:pointer;
+}
+
+.inputDateStyle{
+    font-family: arial;
+    font-size: 16px;
+    border: solid 1px #999999;
+    position:relative; 
+    top:1px;
+    width: 180px;
+    height: 28px;
+    max-width: 180px;
+    max-height: 28px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
+}
+
+.ui-datepicker-trigger{
+    position: relative;
+    
+}
+
+.img{}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	/*width: 49%;
+    color: #333333;
+    cursor:pointer;*/
+    
+      width: 65px;
+      height: 20px;
+      font-family: Arial;
+      font-size: 12px;
+      font-weight: normal;
+      background: #ffffff;
+      color: #000000;
+}
+
+
+
+/* The name of the current day marker class */
+.ui-datepicker-current-day{
+  background-color: #ffffff;
+  color: #ff8a16;
+  border-color: #ff8a16;
+  border: 1px solid;
+  border-collapse: separate;
+  border-spacing: 2px;
+} 
+
+.ui-datepicker-close { display: none; }
+
+
+/* mobile style toggle */
+
+   /* Toggle Checkboxes by Schoberg.net */
+    div.tog{
+
+        border-radius: 20px;
+        display: block;
+        box-shadow: inset 0 0 4px rgba(0,0,0,.6);
+        margin: 1em auto;
+        height: 40px;
+        /*width: 100px;*/
+        width: 150px;
+        position: relative;
+        cursor: pointer;
+        font: 18px/18px arial;
+        background: #17ac8a;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+
+    }
+    div.tog:after{
+
+        content: '';
+        box-shadow: 0px 2px 2px rgba(0,0,0,.6);
+        border-radius: 20px;
+        display: block;
+        height: 30px;
+        width: 30px;
+        background: #fff;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+    div.tog:before{content:'לא';position:absolute;right:11px;top:12px;color:#fff}
+    div.tog:hover:after{left:10px;}
+
+    div.tog.on:before{content:'כן';right:120px;}
+    div.tog.on{background:#1761ac;}
+    div.tog.on:after{left:114px;}
+    div.tog.on:hover:after{left:106px;}
+
+/* end mobile style toggle */
+
+/* fwZippy */
+
+.ng-invalid { border: 1px solid red; }
+.fw-zippy {
+  /*border: 1px solid #151eea;*/
+  display: inline-block;
+  width: 100%;
+}
+
+.fw-zippy-header{
+   font-family: arial;
+   font-size: 16px;
+   white-space: nowrap;
+    
+   padding-bottom: 6px;
+   padding-top: 6px;
+   height: 35px;
+    margin-bottom:3px;
+    cursor:pointer;
+}
+
+.fw-zippy-body{padding-right:15px;}
+
+.fw-zippy-header.opened > .title:after{
+    padding-left: 10px;
+//    float:left;
+    content: '▼ ';    
+}
+
+.fw-zippy-header.closed > .title:after { 
+    padding-left: 10px;
+//    float:left;
+    content: '► ';
+}
+
+
+/*.fw-zippy.opened > .title:after { 
+    padding-left: 10px;
+    float:left;
+    content: '▼ ';
+    
+}*/
+.fw-zippy.opened > .body { 
+    display: block; 
+    /*border: 1px solid #151eea;*/
+}
+/*
+.fw-zippy.closed > .title:after { 
+    padding-left: 10px;
+    float:left;
+    content: '► ';
+}
+*/
+.fw-zippy.closed > .body { display: none; }
+
+.fw-zippy > .title {
+  background-color: #151eea;
+  color: #ffffff;
+  /*padding: .1em .3em;*/
+  padding-right: 0px;
+  padding-left: 0px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 3px;
+}
+.fw-zippy{
+  padding: .1em .3em;
+}
+/* end fwZippy */
+
+
+
+/* Slide toggle */
+ 
+.ng-invalid { border: 1px solid red; }
+
+.slide-toggel {
+  display: inline-block;
+  width: 100%;
+}
+/*
+.slide-toggel.opened > .title:after { 
+    padding-left: 10px;
+    float:left;
+    content: '▼ ';
+    
+}
+*/
+.slide-toggel.opened > .body {display: block; }
+
+/*
+.slide-toggel.closed > .title:after { 
+    padding-left: 10px;
+    float:left;
+    content: '► ';
+}
+*/
+
+.slide-toggel.closed > .body { display: none; }
+
+.slide-toggel > .title {
+  background-color: #151eea;
+  color: #ffffff;
+  padding-right: 0px;
+  padding-left: 0px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 3px;
+}
+.slide-toggel > .body {
+  padding: .1em .3em;
+}
+ /* end Slide toggle */
+
+
+            #sidebar-wrapper {
+                border: 1px solid black;
+//              margin-right: -250px;
+               
+                
+//              right: 250px;
+             /* width: 250px;*/
+             /* background: #000;*/
+              position: fixed;
+             /* height: 100%;*/
+              overflow-y: auto;
+              z-index: 1000;
+              transition: all 0.4s ease 0s;
+              //margin-top: 55px;
+            }
+
+            #page-content-wrapper {
+             /* width: 100%;*/
+              margin-top: 55px;
+            }
+
+            .sidebar-nav {
+              position: absolute;
+              top: 0;
+//              width: 250px;
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+
+            @media (max-width:350px) {
+
+                #wrapper {
+                  padding-right: 0;
+                }
+
+                #sidebar-wrapper {
+                  right: 0;
+                }
+
+                #wrapper.active {
+                  position: relative;
+                  right: 250px;
+                }
+
+                #wrapper.active #sidebar-wrapper {
+//                  right: 250px;
+//                  width: 250px;
+                  transition: all 0.4s ease 0s;
+                }
+            }
+
+
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+}
+
+.navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+}
+.navbar .sub-menu:after {
+    border-top: 6px solid transparent;
+    border-left: none;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    left: 10px;
+    top: 11px;
+    left: -6px;
+}
+
+.disabled{
+    background-color: #ddd;
+}

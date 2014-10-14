@@ -1,0 +1,197 @@
+ <div id="carDetailsCollapsiblePanel"> 
+                       <div class="row">
+                             <div class="col-xs-12" style="margin-bottm:10px;"><hr></div>
+                       </div> 
+                       <div class="row">
+ 
+                            <div class="col-xs-6">
+                                <label for="fromDate">תאריך סיום ביטוח:</label>
+                            </div> 
+                            <div class="col-xs-6">
+                                <label for="toDate">תאריך תחילת ביטוח:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                             <div class="col-xs-12 col-md-6">     
+                                  <input type="text"  fw-datepicker ng-model='vmFlat.toDate'
+                                      placeholder="dd/mm/yyyy" 
+                                      class='inputDateStyle mandatory ui-corner-all' 
+                                      required>
+                              </div>    
+
+                              
+                              <div class="col-xs-12 col-md-6">  
+<!--
+                                 <input type="text"  fw-datepicker ng-model='vmFlat.fromDate'
+                                      placeholder="dd/mm/yyyy" 
+                                      class='inputDateStyle mandatory ui-corner-all' 
+                                       ng-minlength='8' ng-maxlength='10' required>    
+-->
+                                  <input type="text"  fw-datepicker ng-model='vmFlat.fromDate'
+                                         placeholder="dd/mm/yyyy" 
+                                         class='inputDateStyle mandatory ui-corner-all'
+                                        required> 
+                              </div>
+                              
+                       </div>
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div>
+                      
+                       <div class="row">
+                            <div class="col-xs-6"><label>קוד דגם:</label></div>
+                            <div class="col-xs-6"><label>סוג הדירה:</label></div>
+                       </div>
+                        
+                       <div class="row">
+                           <div class="col-xs-6" >
+                              <button id="clean" class="btn btn-primary" style="position:relative; top:-1px;">
+                                  נקה
+                              </button>
+                              <input type="text" 
+                                     data-ng-model="vmFlat.carModel"
+                                     id="carModelId"  class="ui-corner-all">
+                              <button id="search" class="btn btn-primary" style="position:relative; top:-1px;">
+                                <span class="glyphicon glyphicon-search"></span>
+                              </button>
+                           </div>
+                           <div class="col-xs-6">
+
+                                <select class="ui-corner-all" name="carType" ng-model="vmFlat.carType" >
+                                  <option value="">בחר</option>
+                                  <option ng-repeat="type in vmFlat.carTypesLs"  value="{{type.id}}">{{type.name}}</option>
+                                </select> 
+
+                           </div>
+                       </div>
+                        
+                        <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div> 
+                        
+                       <div class="row">
+                            <div class="col-xs-6"><label>בעלות:</label></div>
+                            <div class="col-xs-6"><label>יצרן:</label></div>
+                       </div>
+                        
+                       <div class="row">
+                           <div class="col-xs-6">
+                                <select ng-model="vmFlat.carOwnership" class="ui-corner-all"  name="carOwnership" >
+                                  <option value="">בחר</option>
+                                  <option value="private">דירה פרטי</option>
+                                  <option value="commercial">דירה חברה</option>
+                                </select> 
+                           </div>
+                           <div class="col-xs-6">
+
+                                <select  ng-model="vmFlat.carManufacture" class="ui-corner-all" name="carManufacture" >
+                                  <option value="">בחר</option>
+                                  <option data-ng-repeat='manufacture in vmFlat.carManufacturesLs'
+                                          value='{{manufacture.id}}'>{{manufacture.name}}</option>
+                                  
+                                </select> 
+
+                           </div>
+                       </div>
+                        
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div> 
+                        
+                       <div class="row">
+                            <div class="col-xs-6"><label>שנת יצור:</label></div>
+                            <div class="col-xs-6"><label>דגם:</label></div>
+                       </div>
+                        
+                       <div class="row">
+                           
+                           <div class="col-xs-6">
+                                <select class="ui-corner-all" data-ng-model="vmFlat.carModelYear" >
+                                  <option value="">בחר</option>
+                                  
+                                  <option
+                                          data-ng-repeat='year in vmFlat.carManufacturingYearsLs'
+                                          value='{{year.carManufacturingYear}}'>{{year.carManufacturingYear}}</option>
+                                 
+                                </select> 
+                           </div>
+                           <div class="col-xs-6">
+
+                                <select class="ui-corner-all" ng-model="vmFlat.carModel" >
+                                    <option value="">בחר</option>
+                                    
+                                    <option data-ng-repeat='carModel in vmFlat.carModelsLs'
+                                            value="{{carModel.model}}">
+                                        {{carModel.name}}
+                                    </option>
+                                    
+<!--
+                                  <option value="A1 אודי"> A1 אודי</option>
+                                  <option value="Q2 ב.מ.וו">Q2 ב.מ.וו</option>
+                                  <option value="X דודג'">X דודג'</option>
+                                  <option value="Y דייהו">Y דייהו</option>
+-->
+                                </select> 
+
+                           </div>
+                           
+                           
+                       </div>                      
+                            
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"></div>
+                       </div> 
+                        
+                       <div class="row">
+                            <div class="col-xs-6"><label>קוד מיגון:</label></div>
+                            <div class="col-xs-6"><label>גיר:</label></div>
+                       </div>
+                        
+                       <div class="row">
+                           
+                           <div class="col-xs-6">
+                                <select class="ui-corner-all" ng-model="vmFlat.protectionCode" >
+                                  <option value="">בחר</option>    
+                                  <option value="12">12</option>
+                                  <option value="11">11</option>
+                                </select> 
+                           </div>
+                           <div class="col-xs-6">
+
+                                <select class="ui-corner-all" ng-model="vmFlat.gir" >
+                                  <option value="">בחר</option>
+                                  <option value="hand"> ידני</option>
+                                  <option value="automat">אוטומתי</option>
+                                 
+                                </select> 
+
+                           </div>
+                           
+                           
+                       </div>     
+  
+                      <div class="row">
+                           <div class="col-xs-10">
+                                <h3>{{vmFlat.volume}}</h3><label>volume: </label>
+                           </div>
+                           
+                           <div class="col-xs-2" style="margin-top:10px;"></div>
+                           
+                       </div> 
+     
+                       <div class="row">
+                             <div class="col-xs-12" style="height:20px;"><hr></div>
+                       </div> 
+                        
+                       <div class="row">
+                           <div class="col-xs-10">
+                                <h3>6,724 &#x20AA;</h3>
+                           </div>
+                           
+                           <div class="col-xs-2" style="margin-top:10px;"><label>פרמיה בסיסית:</label></div>
+                           
+                       </div> 
+   
+                        
+</div> 

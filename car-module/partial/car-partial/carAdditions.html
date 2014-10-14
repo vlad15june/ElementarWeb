@@ -1,0 +1,22 @@
+                <div id="carAdditionCollapsiblePanel">
+                    <div class="row">
+                             <div class="col-md-12" style="margin-bottm:10px;"><hr></div>
+                    </div>  
+                    <div class="row">    
+                       <div data-ng-repeat='coverage in vmCar.carServices.booleanCovergesLs'>
+                           
+                               <div class="col-md-6 ">
+                                   <label style='margin-right:5px;'>
+                                       {{coverage.coverageName}}:
+                                   </label>
+                                  
+                                   <div style='margin-right:5px;' 
+                                        data-fw-toggle 
+                                        data-ng-model='coverage.checked'/>
+                                   <br>
+                               </div>
+                               
+                        </div> 
+                    </div>                       
+                        
+                </div>  

@@ -1,0 +1,33 @@
+  
+
+
+<div class="mainPanel panel panel-default ui-widget-content ui-corner-all">
+    <div class="ui-widget-header ui-corner-all">
+        <h3>ביטוח מקיף:</h3> 
+    </div>
+                 
+    <div class="panel-body">
+                        
+        <!-- car details panel -->
+        <div data-fw-zippy="דף פרטי רכב:" ng-model='modelComprehensive.carModel.carDetailsOpen'>
+                        
+             <div data-ui-view="carDetailsPanel"></div>
+            
+        </div><!-- end car details panel -->
+                
+        <!-- additions panel -->
+        <div data-fw-zippy="תוספות לרכב:">
+ 
+             <div data-ui-view="carAdditionsPanel"></div>       
+        </div><!-- end additions panel -->        
+                    
+        <!-- discuont panel -->
+        <div data-fw-zippy="הנחות לרכב:">
+                           
+              <div data-ui-view="carDiscountsPanel"></div>              
+        </div><!-- end discuont panel -->                    
+                    
+                    
+    </div>
+                   
+</div>  

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="mainPanel panel panel-default ui-widget-content ui-corner-all">
+        <div class="ui-widget-header ui-corner-all">
+            <h3>ביטוח דירה:</h3>
+        </div>
+
+        <div class="panel-body">
+
+            <!-- car details panel -->
+            <div ng-model='carModel.carDetailsOpen'
+                 data-fw-zippy='דף פרטי דירה:'>
+
+                <!--<div data-ng-include="'flat-module/partial/flat-partial/flatDetails.html'"></div>-->
+                <div data-ui-view="flatDetailsPanel"></div>
+
+            </div>
+            <!-- end car details panel -->
+
+            <!-- additions panel -->
+            <div data-fw-zippy="תוספות לדירה:">
+
+                <!--<div data-ng-include="'car-module/partial/car-partial/carAdditions.html'"></div>-->
+                <div data-ui-view="flatAdditionsPanel"></div>
+
+            </div>
+            <!-- end additions panel -->
+
+            <!-- discuont panel -->
+            <div data-fw-zippy="הנחות לדירה:">
+
+                <!--<div data-ng-include src="'car-module/partial/car-partial/carDiscounts.html'"></div>-->
+                <div data-ui-view="flatDiscountsPanel"></div>
+
+            </div>
+            <!-- end discuont panel -->
+
+
+        </div>
+
+    </div>
+
+</div>

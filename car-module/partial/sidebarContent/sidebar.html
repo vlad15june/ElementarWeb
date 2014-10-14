@@ -1,0 +1,56 @@
+<div class="sidebarPanel panel panel-default ui-widget-content ui-corner-all">      
+                 
+    <div id='xxx' class="ui-widget-header ui-corner-all">
+                    <h3>הצגת מחיר:</h3>
+    </div>
+                 
+    <div id='yyy' class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id="insuranceType"></h4>
+                </div>
+            </div>
+            <div id="sidePanelLinks">
+
+                <div data-fw-zippy="פרטי רכב ותאריכים">
+    
+                    <div data-ng-include="'car-module/partial/sidebarContent/carDetails.html'"></div>
+    
+                </div>
+
+                <div data-fw-zippy="תוספות לרכב">
+                    
+                    <div data-ng-include src="'car-module/partial/sidebarContent/carAdditions.html'"></div>
+
+                </div>
+
+                <div data-fw-zippy="הנחות לרכב">
+    
+                    <div data-ng-include="'car-module/partial/sidebarContent/carDiscounts.html'"></div>    
+    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <center>
+         <button type="button" class='btn' data-ng-click='vmCar.carServices.premiumCalc();'>
+                חישוב
+          </button>    
+    </center>
+    <div>
+        <label>מיגון נדרש:</label>
+        {{vmCar.carServices.calcOut.po4.es_MIGUN_NIDRASH_NAME}}
+    </div>
+    <div>
+        <label>פרמית מקיף:</label>
+       {{vmCar.carServices.calcOut.po4.es_PREMIA}}  &#x20AA;
+    </div>
+    <div>
+        <label>פרמית חובה:</label>
+        {{vmCar.carServices.calcOut.po4.es_PREMIA_HOVA}} &#x20AA;
+    </div>
+
+    
+</div>                 

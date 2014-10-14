@@ -1,0 +1,50 @@
+<div class="sidebarPanel panel panel-default ui-widget-content ui-corner-all">      
+                 
+    <div id='xxx' class="ui-widget-header ui-corner-all">
+                    <h3>הצעת מחיר:</h3>
+    </div>
+                 
+    <div id='yyy' class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id="insuranceType"></h4>
+                </div>
+            </div>
+            <div id="sidePanelLinks">
+
+                <div data-fw-zippy="פרטי דירה ותאריכים">
+    
+                    <!--<div data-ng-include="'car-module/partial/sidebarContent/carDetails.html'"></div>-->
+                    <span>Add ui-view here...</span>
+
+                </div>
+
+                <div data-fw-zippy="תוספות לדירה">
+                    
+                    <!--<div data-ng-include src="'car-module/partial/sidebarContent/carAdditions.html'"></div>-->
+                    <span>Add ui-view here...</span>
+
+                </div>
+
+                <div data-fw-zippy="הנחות לדירה">
+    
+                    <!--<div data-ng-include="'car-module/partial/sidebarContent/carDiscounts.html'"></div>    -->
+                    <span>Add ui-view here...</span>
+    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <center>
+         <button type="button" class='btn' data-ng-click='vmFlat.flatService.premiumCalc();'>
+                חישוב
+          </button>   
+    </center>
+    <div>
+        <label>פרמית:</label>
+       {{vmFlat.flatService.calcOut.po4.es_PREMIA}} &#x20AA; 
+    </div>
+</div>                 
